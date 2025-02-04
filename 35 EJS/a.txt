@@ -1,0 +1,38 @@
+Templating
+
+EJS (Embedded JS templates)
+
+EJS is a simple templating language that lets you generate HTML markup with plain JS
+
+if there are multiple pages with same HTMl markup we use templating.
+this is like a blueprint
+
+other tools are handlebars
+
+01.js , dice.ejs , home.ejs
+npm i ejs
+
+we need not require EJS in js file as Express by default requires it
+
+also all the HTMl templetes must be in the views directory 
+
+Interpolation syntax
+
+it irefers to the embedding expressions into the markup text
+
+02.js , instagram.ejs
+
+
+creating a basic template for the route /ig/:username
+
+03.js , insta.ejs
+
+rendering data from data.json
+
+Serving static files 
+
+app.user (express.static ( folder_name))
+
+INCLUDES
+
+this allows us to create sub templates

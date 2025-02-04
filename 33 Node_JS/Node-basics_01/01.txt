@@ -1,0 +1,92 @@
+NODE JS
+
+this is a JS runtime enviornment
+it is used for server side programming
+
+NODE js is not a language, library or framework
+
+VS code is built on node js
+
+NODE REPL
+
+read evaluate print loop
+
+we can use the node REPL in terminal and run js code
+
+NODE FILES
+
+we can run the JS files by node "filename"
+
+01.js
+
+PROCESS
+
+process : this object provides the info about, and control over, the current node js process.
+
+process.argv: returns an array containing the command-line argumrnts passed when the Node js process was launched
+
+02.js
+
+EXPORT
+
+module.exports
+
+require() -> a built in function to include external modules that exist in seperate files.
+
+module.exports a special object
+
+by default module.exports sends empty object
+
+index.js , 03.js
+
+EXPORT IN DIRECTORIES
+
+the require finds the index.js file and this is the entry point for the directory
+
+04.js 
+
+NPM -> node package manager
+npmjs.com
+
+this is the standard packages for Node js (library of packages)
+packages are the codes made by other developers which we can use
+
+this is also a command line tool , this is pre installed with node
+
+INSTALLING PACKAGES 
+
+npm install <name of the package>
+
+the scope of the package is just inside the directory in which it is installed
+
+node_modules -> the node modules folder contains every installed dependency for your project
+
+package-lock.json -> it records the exact version of every installed dependency. Inclusing its sub-dependencies and their versions
+
+npm i figlet to install figlet
+
+
+Packgae.json -> the package.json file contains descriptive and functional metadata about a project, such as a name, version and dependencies
+
+npm init -> to initialize the package.json
+
+we can share package.json to share all the dependency file info
+
+we can also install packages globally
+npm i -g <name of the package>
+
+
+04.js, math2.js
+
+IMPORT MODULES 
+using the export and the import keyword
+
+we have to add "type" : "module" in package.json to use import, export
+
+require vs import
+
+we can't selectively inport the needed piecces with require. w can selectively load pieces with inport which saves memory
+
+loading is synchronous for require but can be asynchronous for import
+
+there are some npm packages which we can import directly , e.g. random-words

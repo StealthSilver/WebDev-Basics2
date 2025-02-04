@@ -1,0 +1,59 @@
+Library
+
+it is a collection of pre-written code that can be used to perform specific tasks
+e.g. axios
+
+Framework
+
+it is a set of pre-written code that provides a structure for developing software applications
+e.g. express
+
+Express Framework
+
+it is a node js framework that helps us to make the server side of the web applications
+
+uses :
+1. listen requests
+2. parsing requests
+3. matching responses with routes
+4. sending suitable response
+
+
+01.js
+
+npm i express
+
+port -> they are the logical endpoints of a network connection that is used to exchange info between a web server and a web client
+
+app.listen to start the server
+
+app.use to listen any request , GRT, POST ...
+
+http request are text based but express converts it into js object 
+res.send() -> to send a http response in JSON format
+
+02.js
+
+ROUTING
+
+it is a process of selecting a path for traffic in a network or between or across multiple networks
+
+we use app.get() for routing, 
+we can send one respons for one path
+/ is the root path
+
+* this is used for the wild card for replying to all other routes
+
+NODEMON 
+
+to automatically restart the server with the code changes
+
+03.js
+
+PATH PARAMETERS 
+
+we can pass the params to get to the specific page according to the user variable
+
+QUERY STRING
+
+they are used to send the search query

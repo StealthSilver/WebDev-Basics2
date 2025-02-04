@@ -1,0 +1,39 @@
+REST -> Representational State transfer
+
+REST is an architecture style that defines a set if constrains to de used for creating web services
+the API which use the rest concept are called RESTful API 
+
+They are used to create CRUD operations -> CREATE, READ, UPDATE, DELETE
+
+to check the practices -> stackoverflow.blog/best-practices-for-rest-api-design
+
+GET -> retrives resources
+POST -> submits new data to the server
+PUT -> updates existing data
+PATCH -> updates existing data partially
+DELETE -> removes data
+
+resorce -> the data on which the CRUD ops are performed
+
+index.html , index.js 
+
+CREATING A QUORA PAGE 
+
+GET     /posts         to get data for all posts    index route
+POST    /posts         to add a new post            create route 
+                                                    2 routes -> serve the form (/posts/new) , add a new post (/posts)
+GET     /posts/:id     to get one post (using id)   view route
+PATCH   /posts/:id     to update specific post      update route
+DELETE  /posts/:id     to delete specific posts     destroy route
+
+
+REDIRECT
+
+rs.redirect(url)
+
+UUID package
+Universally unique identifier
+
+npm install uuid
+
+we can only send get and post request through html forms but we will use a package by the name of npm override, it can override the method of the form

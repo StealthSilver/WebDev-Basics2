@@ -1,0 +1,18 @@
+01.html
+
+GET and POST requests
+
+GET -> 
+used to GRT some response
+Data sent in query strings (limited, string data & visible in the URL)
+this is generally not safe
+browsers have a limit over the length of URL
+
+POST->
+used to POST something (for Create / Write / Update)
+Data sent via request body (any type of data)
+
+handling post requests
+
+1. set up POST request route to get some response
+2. Parse POST request data
