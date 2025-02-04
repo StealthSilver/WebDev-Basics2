@@ -1,0 +1,34 @@
+app-1
+React props 
+
+Props are the information that you pass to a JSX tag 
+<Product title= "phone" price = "30k>
+
+we can also assign default values in props 
+{title, price =1}
+
+app-2
+passing arrays to props
+
+Rendering arrays 
+
+instead of individual vlue we can send array of html elements
+
+
+app-3
+Conditionals in React
+
+Adding elements on the basis of some conditions 
+
+{price >= 1000 ? <p> Discount : 5% </p> : null}
+
+{price >= 1000 && <p> Discount : 5% </p>}
+
+
+Dynamic component styling
+
+React dev tools -> chrome extention
+
+app -4 -> activity
+
+app-5 -> cards amazon
