@@ -1,0 +1,75 @@
+TERMINAL
+
+A text input and output enviornment
+
+used for:
+1. package installing
+2. git 
+3. low level access to the system
+
+
+DIFFERENT TERMS
+
+1. command line -> any interface that is used by entering textual commands (gen. window centric)
+2. terminal -> this is a type of command line (gen. mac centric)
+3. console -> a command line interface used to work with your computer
+4. shell -> a program running on terminal
+5. Bash ->  A popular shell on mac / Linux
+6. Z -shell -> Another shell (default)
+
+zsh is the z-shell
+
+BASIC COMMANDS 
+
+ls - list files (show my files)
+
+pwd -> print working directory
+(location)
+
+clear -> clear screen
+
+press up arrow and down arrow to get the previous or next commands
+
+cd Desktop/Delta (relative path)
+cd usera/pogo/Desktop (absolute path)
+/ = root directory
+~ = home directory
+
+cd / -> to go to the root directory
+cd ~ -> go to the home directory
+
+mkdir -> make a new directory
+
+cd .. -> go a previous directory
+cd ../.. -> go two previous directories 
+
+FLAGS -> Flags are characters that we pass with commands to modify their behaviour
+
+manual command
+
+man ls -> give info about ls command
+man mkdir -> get info about the mkdir command
+
+press q to quit the manual
+
+with flags 
+
+ls -l (additional info)
+ls -a (to show the hidden folders)
+ls -la (combining both flags)
+
+
+TOUCH COMMAND
+
+to create new files in the directory
+
+DELETE FILES AND FOLDERS 
+
+!--- any thing which is deleted through the terminal can not be recoverd, unlike the recycle bin ---!
+
+rm -> remove files
+rmdir -> remove empty folders
+rm -rf -> remove any folders
+
+here r is recursive delete
+here f is force delete
