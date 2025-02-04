@@ -1,0 +1,99 @@
+REACT -> A JS library for creating user interfaces 
+documentation -> react.dev , created by meta
+
+React increases the reusability, Atlassian website is completely built on REACT 
+
+A componet is a reusable piece of code 
+
+the components form a heiarchy 
+
+JSX -> javascript extention syntax
+
+it lets us write HTMl directly inside JS
+JSX is transpiled to JS by using BABLE
+
+Setting up REACT 
+
+create-React-App  v/s Vite 
+
+Vite is faster 
+npm create vite@latest
+
+to run the application : npm run dev
+
+in the react folder . there are differnt files 
+
+1. the git ignore file is to ignore the things posted on git 
+2. the eslint file is for formatting
+3. index.html is the basic html file this is the homepage
+the root div is present here. everything renders inside this 
+
+
+there is a public folder and a src folder 
+
+the src folder contains the assets folder
+and 4 files 
+
+1. App.jsx -> this is the main component , this is the main parent comp. 
+2. App.css -> this contains the styles for the App.jsx
+3. main.jsx -> here we access the root div
+4. index.css -> this is the styling file for the index.html 
+
+index.html -> main.jsx -> app.jsx (basic flow) 
+
+
+Creating a component 
+
+Component is the reusable independent piece of code 
+
+creation : function Title() {
+    return (
+        <h1> Hello World </h1>
+    );
+}
+
+rendering:
+<Title></Title> 
+
+IMPORT - EXPORT 
+
+Import -> import Title from "./Title.jsx";
+
+default export -> export default Title;
+
+
+for multiple exports
+Named Export -> export {Title} , 
+
+import (Title) from "./Title.jsx";
+
+Writing markup in jsx
+
+1. Return a single root element
+2. Close all the tags 
+3. camelCase most of the things 
+instead of class use className 
+
+React Fragment 
+
+it lets you group a list of children  without adding an extra node to the DOM 
+
+<> 
+<Title/>
+<Title/>
+<Title/>
+</>
+
+JSX with curly braces :
+
+inside the JSX we can use curly braces to write the pure JS code 
+
+<p> 2 * 2  = {2*2} </p>
+
+basic-react-app-4
+Structuring Componets 
+
+Style components 
+
+we divide the styling in different files 
+then we use webpack to import and export files
