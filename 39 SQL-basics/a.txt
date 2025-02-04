@@ -1,0 +1,329 @@
+MySQL -> Database
+SQL -> language to communicate with the Database
+
+Database is a collection of data in a format that can be easily accessed 
+
+why db ?
+1. can store large data 
+2. features like security, scalability
+3. easier to insert, update or delete data 
+
+DBMS -> database management system is a layer over the data which organizes the data 
+
+SQL DB v/s NoSQL DB
+
+SQL : relational db (data is stored in tables)
+
+e.g. MySQL, Oracle, PostgreSQL etc. 
+
+NoSQL : non relational DB (data stored in document / key - val / graph etc.)
+e.g. MongoDB , Cassandra, Neo$j etc. 
+
+SQL -> structured query language 
+
+SQL is a programming language used to interact with the relational databases 
+
+the database can contain numerous tables 
+these tables are interrelated 
+
+the schema is the design of the table, they are captured by the columns 
+rows in SQL is called tuple, they capture the data for respective id 
+
+SQL commands 
+these are the basic commands for SQL
+
+CREATE DATABASE db_name ;
+DROP DATABASE db_name ;
+USE db_name;
+
+SQL is case insensitive
+
+to use the db -> USE 
+to create tables :
+
+CREATE table table_name (
+    column_name1 datatype constrain
+    column_name2 datatype constrain
+    column_name3 datatype constrain
+    column_name4 datatype constrain)
+
+CREATE DATABASE db_name 
+CREATE DATABASE IF NOT EXISTS db_name 
+
+DROP DATABASE db_name 
+DROP DATABASE IF EXISTS db_name 
+
+SHOW DATABASES
+SHOW TABLES 
+
+DATA TYPES 
+
+CHAR 
+VARCHAR
+BLOB
+INT 
+TINYINT
+BIGINT
+BIT 
+FLOAT
+DOUBLE 
+BOOLEAN 
+DATE 
+YEAR
+
+
+CONSTRAINTS 
+rules for the data in the table 
+
+NOT NULL -> columns cannot have a null value 
+UNIQUE -> all values in column are different
+DEFAULT -> sets the default value of the column 
+CHECK -> it can limit the values allowed in the column 
+
+
+PRIMARY KEY : makes a column unique and not null but used only once. It is a clumn (or a set of columns) in a table that uniquely identifies each row. (a unique id)
+There is only one PK and it should be NOT null.
+
+FOREIGN KEY : prevents actions that would destroy links between tables. It is a column (or set of columns) in a table that refers to the primary key in another table
+FKs can have duplicate and null values. There can be multiple FKs 
+
+
+we can create ER (entity relation) diagrams in the reverse engineer section
+
+to cerate a new db and table 
+---------------------------------------
+CREATE DATABASE instagram;
+
+SHOW DATABASES;
+
+USE instagram;
+
+SHOW TABLES; 
+
+CREATE TABLE user (
+id INT,
+age INT,
+name VARCHAR(30) NOT NULL,
+email VARCHAR(50) UNIQUE,
+followers INT DEFAULT 0,
+following INT,
+CONSTRAINT CHECK (age >= 13),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE post (
+id INT PRIMARY KEY,
+content VARCHAR(100),
+user_id INT,
+FOREIGN KEY (user_id) REFERENCES user(id)
+); 
+---------------------------------------
+
+
+INSERT -> insert data into tables 
+
+INSERT INTO table_name
+(colname1 , colname2);
+values -
+
+---------------------------------------
+INSERT INTO user
+(id , age , name , email, followers, following)
+VALUES
+(1, 14, "adam" , "adam@yahoo.in", 123, 145),
+(2, 15, "mike" , "adadgfdaam@yahoo.in", 423, 145),
+(3, 16, "harvey" , "adafam@yahoo.in", 12, 15),
+(4, 17, "rachel" , "adjgafam@yahoo.in", 13, 14);
+---------------------------------------
+dont add duplicate values
+
+
+SELECT -> selects and shows data from the db 
+
+SELECT col1, col2 FROM table_name 
+
+to show all 
+
+SELECT * FROM table_name
+
+CLAUSE 
+to define some conditions 
+
+SELECT col1 , col2 FROM table_name 
+WHERE conditions; 
+
+---------------------------------------
+
+SELECT *
+FROM user
+WHERE followers >= 200;
+---------------------------------------
+ 
+
+operators in where
+
+Arthematic operators ->  + , - , * , / , %
+Comparision operators -> >= , > , < , <=
+Logical operators -> AND , OR, NOT , IN , BETWEEN ,ALL , LIKE , ANY
+Bitwise operators -> & (BITWISE AND) , | (BITWISE OR)
+
+AND -> to check if both conditions are true 
+OR -> to check for one of the conditions to be true 
+BETWEEN -> selects for a given range 
+IN -> matches any value in the list 
+NOT -> to negate the given condition 
+
+---------------------------------------
+
+SELECT name, age, followers, email
+FROM user
+Where email IN ("adacafagam@yahoo.in");
+
+SELECT *
+FROM user
+WHERE followers >= 200;
+---------------------------------------
+
+LIMIT 
+sets an upper limit on number of (tuples) rows to be returned
+
+SELECT col1, col2 FROM table_name 
+LIMIT number
+
+ORDER BY 
+to sort in ascending or descending order 
+
+SELECT col1, col2 FROm table_name 
+ORDER BY col_names ASC / DESC
+
+
+---------------------------------------
+SELECT *
+FROM user
+ORDER BY age DESC;
+---------------------------------------
+
+
+AGGREGATE FUNCTIONS 
+aggregate functions perform a calculation on a set of values, and return a single value 
+
+COUNT()
+MAX()
+MIN()
+SUM()
+AVG()
+
+---------------------------------------
+SELECT max(marks)
+FROM student
+---------------------------------------
+
+GROUP BY clause 
+
+Groups rows that ahev the same values into summary rows.
+It collects data from multiple records and groups the results by one or more columns 
+
+- generally we group by some aggragate function 
+
+SELECT col1, col2 
+FROM table_name 
+GROUP BY col_name;
+
+---------------------------------------
+SELECT count(id)
+FROM user 
+GROUP BY age;
+---------------------------------------
+
+
+HAVING clause 
+
+similar to WHERE, applies some conditions in the row
+But it is used when we want to apply any conditions after grouping
+
+WHERE is for a table, HAVING is for a group
+
+---------------------------------------
+SELECT age, max(followers)
+FROM user
+GROUP BY age
+HAVING max(followers) > 200;
+---------------------------------------
+
+
+General order
+
+SELECT columns 
+FROM table_name
+WHERE condition 
+GROUP BY columns
+HAVING condition
+ORDER BY columns ASC
+
+UPDATE -> to update the existing rows 
+
+UPDATE table_name 
+SET col1 = val1
+WHERE condition;
+
+UPDATE user
+
+---------------------------------------
+
+UPDATE user
+SET followers = 600
+WHERE age = 15;
+
+SET SQL_SAFE_UPDATES = 0; -> to remove the update error
+---------------------------------------
+
+
+DELETE to delete existing rows 
+
+DELETE FROm table_name 
+WHERE condition
+
+---------------------------------------
+DELETE from USER 
+WHERE age = 15;
+---------------------------------------
+
+
+ALTER -> to change the schema 
+
+ADD column 
+DROP column 
+RENAME table
+
+
+---------------------------------------
+ALTER TABLE user
+ADD COLUMN city VARCHAR(25) DEFAULT "Delhi";
+---------------------------------------
+
+---------------------------------------
+ALTER TABLE user
+DROP COLUMN age;
+---------------------------------------
+
+---------------------------------------
+ALTER TABLE user
+RENAME TO instaUser
+---------------------------------------
+
+---------------------------------------
+
+ALTER TABLE user 
+CHANGE COLUMN followers subs INT DEFAULT 0;
+
+---------------------------------------
+INSERT INTO user
+(id, name, email, following)
+VALUES 
+(7, "genini", "fhadfa@yahoo.in", 120);
+---------------------------------------
+
+
+TRUNCATE -> to delete table's data 
+
+TRUNCATE TABLE table_data

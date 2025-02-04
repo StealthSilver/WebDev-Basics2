@@ -1,0 +1,112 @@
+GIT -> it is a version control system which is used to track changes in the code and do collobrative programming
+
+popular VCS providers are -> Github , Bitbucket , Gitlab
+
+you can create a new repo on github on the website
+then you can add readme.md file -> this si a markdown file which stores the project details
+
+CONFIGURING GIT
+
+git config enter the username and the email
+
+git config --global user.email "email"
+git config --global user.name "name"
+
+git config --list -> to list out the registerred credentials
+
+GIT COMMANDS
+
+CLONE -> git clone "https code"
+
+every git folder contains a hidden git file which can be seen by the ls -a command 
+
+every git file has a lifecycle (untracked -> unmodified -> modified -> staged)
+
+SATUS -> git status , we can check the current state of the file with this
+the new files have to be tracked and the modified files have to be commited
+
+ADD -> add new or changed files in your working directory to the git staging area
+git add [file name]
+git add . -> to add all the files at once
+
+COMMIT -> it is hte record of change
+git commit -m "some message"
+
+PUSH -> upload local repo content to remote repo
+git push origin main
+
+INIT -> used to create a new git repo
+git init
+
+git remote add origin <link>
+
+git remote -v (to verify remote)
+git branch (to check branch)
+git branch -M main (to rename branch)
+git push origin main
+
+
+git push -u origin main -> to make the upstream branch as main, after thiswe can just do git push
+git commit -am "message" -> to add and commit at the same time
+
+
+GIT BRANCHES
+
+we can create different brance=hes to work on different features
+
+main -> dev -| -> dev 1 (feature branch)
+             | -> dev 2 (feature branch)
+             | -> dev 3 (feature branch)
+
+git branch (to check branch)
+
+git branch -M main (to rename branch)
+
+git checkout <branch name> (to navigate)
+
+git checkout -b <new branch name> (to create a new branch)
+
+git branch -d <branch name> (to delete branch)
+
+MERGING CODE 
+
+git diff <branch name> (to compare commits, branches, files and more)
+git merge or CREATE A PR (to merge two branches)
+
+PR -> we can create a pull request on github to merge branches 
+
+PULL command
+
+git pull origin main
+
+used to fetch and download content from a remote repo and immeiately update the local repo to match that content
+
+
+MERGE CONFLICTS
+
+an event that takes place when the GIT is unable to automatically resolve the differences in code between two commits
+
+we have to resolve the conflicts manually
+
+FIXING MISTAKES
+
+case 1: staged changes 
+git reset <file name>
+git reset 
+
+case 2: commitd changes (for one commit)
+git reset HEAD~1
+
+case 3: commited changes (for many commits)
+git reset <commit hash>
+dit reset --hard <commit hash>
+
+git log - to check the previous git activity
+
+FORKING
+
+we can fork some remote repo which we want to work on in github. thet repo can be maintained by some other developers.
+then we can make changes in that repo, and create PR if we want them to be merged in the base repo
+
+fork is a rough copy of the repo 
+

@@ -1,0 +1,44 @@
+OOPS -> object oriennted programming
+
+01.js 
+
+to structure our code
+
+when we see that data in objects in repeating then we tend to create templates
+
+02.js
+
+Object Prototypes : 
+
+prototypes are mechenism by which JS objects inherit features from one another.
+
+It is like a single template object that all objects inherit methods and properties from without having their own copy
+
+arr._proto_ (refrence)
+
+Array.prototype (actual object)
+
+String.prototype
+
+03.js
+
+factory functions -> a function that creates objects
+
+04.js
+
+new operator 
+the new operator lets the devdloper create an instance of a user-defined object type or one of the built-in object types that has a constructor function.
+
+05.js
+
+Classes in JS
+
+classes are a template for creating objects
+
+the constructor method is a special method of a class for creating and initializing an object instance of the class
+
+06.js
+
+Inheritance
+
+inheritance is a mechenism that allows us to create new classes on the basis of already existing classes
